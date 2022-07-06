@@ -1,4 +1,4 @@
-Chapter 2 Class Assignment 1
+Chapter 2 Class Assignment 1 Solution
 
 
 Here is an exmple insert statement.  With this example you would want to replace the X with the values of your answers.  You will also need to add 
