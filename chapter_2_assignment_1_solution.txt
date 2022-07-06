@@ -1,0 +1,125 @@
+Chapter 2 Class Assignment 1
+
+
+Here is an exmple insert statement.  With this example you would want to replace the X with the values of your answers.  You will also need to add 
+additional lines for 11 - 15.
+
+INSERT ALL
+INTO CLASS_ASSIGNMENTS VALUES (2,1,1,'B')
+INTO CLASS_ASSIGNMENTS VALUES (2,1,2,'AC')
+INTO CLASS_ASSIGNMENTS VALUES (2,1,3,'AC')
+INTO CLASS_ASSIGNMENTS VALUES (2,1,4,'AF')
+INTO CLASS_ASSIGNMENTS VALUES (2,1,5,'B')
+INTO CLASS_ASSIGNMENTS VALUES (2,1,6,'D')
+INTO CLASS_ASSIGNMENTS VALUES (2,1,7,'BDEF')
+INTO CLASS_ASSIGNMENTS VALUES (2,1,8,'ADEF')
+INTO CLASS_ASSIGNMENTS VALUES (2,1,9,'X')
+INTO CLASS_ASSIGNMENTS VALUES (2,1,10,'X')
+SELECT * FROM DUAL;
+
+
+If you have not created the class_assignments and homework tables below are the statements to get those created.
+
+CREATE TABLE CLASS_ASSIGNMENTS (
+	CHAPTER		NUMBER NOT NULL,
+	ASSIGNMENT 	NUMBER NOT NULL,
+	QUESTION	NUMBER NOT NULL,
+	ANSWER		VARCHAR2(6)
+)
+TABLESPACE USERS
+PARALLEL(DEGREE 2)
+PCTFREE 10;
+
+CREATE TABLE HOMEWORK
+(CHAPTER	NUMBER NOT NULL
+,QUESTION	NUMBER NOT NULL
+,ANSWER		VARCHAR2(6)
+)
+TABLESPACE USERS
+PARALLEL(DEGREE 2)
+PCTFREE 10;
+
+
+For Questions 1 - 8 Use these answers and choose all that apply for each question.  If you think more than one answer is correct 
+please insert them as 'ACD' -> without commsa or spaces.  Please also list your answers in alphabetical order ('ABC').
+
+A = Missing Comma
+B = Extra Comma
+C = Missing FROM
+D = Missing quote
+E = Missing AND
+F = Misspelled column name
+
+
+1.  	SELECT LAST_NAME, FIRST_NAME, FROM hr.EMPLOYEES;
+ANS	B
+TEST    SELECT LAST_NAME, FIRST_NAME FROM hr.EMPLOYEES;
+
+2.  	SELECT LAST_NAME FIRST_NAME hr.EMPLOYEES;
+ANS	'AC'
+TEST    SELECT LAST_NAME, FIRST_NAME FROM hr.EMPLOYEES;
+
+3.  	SELECT LAST_NAME ,FIRST_NAME SALARY hr.EMPLOYEES WHERE LAST_NAME LIKE 'CRANE';
+ANS	'AC'
+TEST    SELECT LAST_NAME, FIRST_NAME, SALARY FROM hr.EMPLOYEES WHERE LAST_NAME LIKE 'CRANE';
+
+4. 	SELECT LAST_NANE, FIRST_NAME SALARY FROM  hr.EMPLOYEES WHERE LAST_NAME LIKE 'CRANE;
+ANS	'AF'
+TEST    SELECT LAST_NAME, FIRST_NAME, SALARY FROM hr.EMPLOYEES WHERE LAST_NAME LIKE 'CRANE';
+
+5. 	SELECT ,LAST_NAME ,FIRST_NAME, FROM hr.EMPLOYEES WHERE ROWNUM < 10;
+ANS	'B'
+TEST    SELECT LAST_NAME, FIRST_NAME FROM hr.EMPLOYEES WHERE ROWNUM < 10;
+
+6. 	SELECT LAST_NAME ,FIRST_NAME FROM hr.EMPLOYEES WHERE LAST_NAME LIKE CRANE;
+ANS	'D'
+TEST    SELECT LAST_NAME, FIRST_NAME FROM hr.EMPLOYEES WHERE LAST_NAME LIKE 'CRANE';
+
+7. 	SELECT ,LAST_NAME ,FIRST_NAME FROM hr.EMPLOYEES WHERE NAME LIKE CRANE ROWNUM < 10;  
+ANS	'BDEF'
+TEST    SELECT LAST_NAME, FIRST_NAME FROM hr.EMPLOYEES WHERE LAST_NAME LIKE 'CRANE' AND ROWNUM < 10;
+TEST    SELECT LAST_NAME, FIRST_NAME FROM hr.EMPLOYEES WHERE FIRST_NAME LIKE 'CRANE' AND ROWNUM < 10;
+
+8. 	SELECT LAST_NANE FIRST_NAME FROM hr.EMPLOYEES WHERE NAME LIKE CRANE ROWNUM < 10;  
+ANS	'ADEF'
+TEST    SELECT LAST_NAME, FIRST_NAME FROM hr.EMPLOYEES WHERE LAST_NAME LIKE 'CRANE' AND ROWNUM < 10;
+TEST    SELECT LAST_NAME, FIRST_NAME FROM hr.EMPLOYEES WHERE FIRST_NAME LIKE 'CRANE' AND ROWNUM < 10;
+
+9.  The two clauses that are required for every SELECT statement are?  
+	A.  FROM AND WHERE
+	B.  SELECT AND WHERE
+	C.  SELECT AND FROM
+	D.  SELECT AND ORDER BY
+
+10.  A SQL statement does not have to contain all 6 clauses but it if does they must appear in the correct order.
+	A.  TRUE
+	B.  FALSE
+
+11.  A literal must be contain in double quotes.
+	A.  TRUE
+	B.  FALSE
+
+12.  The keywords are not case sensitive in SQL.
+	A.  TRUE
+	B.  FALSE
+
+13.  The only thing in SQL that is case sensitive are the literals.
+	A.  TRUE
+	B.  FALSE
+
+14.	After describing the EMPLOYEES table, you discover that the SALARY column 	
+has a data type of NUMBER(8,2). Which SALARY value(s) will not be permitted 	in this column? (Choose all that apply.)  Hint one of these can be inserted but the value is changed.   
+Key phrase is Which SALARY value(s) will not be permitted.
+	A.	SALARY= 12345678
+	B.	SALARY= 123456.78
+	C.	SALARY= 12345.678
+	D.	SALARY= 123456
+
+15.	After describing the JOB_HISTORY table, you discover that the START_DATE 	
+and END_ DATE columns have a data type of DATE. Consider the expression 	END_DATE-START_ DATE. (Choose the correct statement.)
+	A.	A value of DATE data type is returned.
+	B.	A number is returned
+	C.	A value of type VARCHAR2 is returned. 
+	D.	The expression is invalid since arithmetic cannot be performed on columns 	with DATE data types.
+	E.	The expression represents the days between the END_DATE and START_DATE less 	one day.
+
