@@ -125,7 +125,7 @@ Key phrase is Which SALARY value(s) will not be permitted.
 	B.	SALARY= 123456.78
 	C.	SALARY= 12345.678
 	D.	SALARY= 123456
-ANS	X
+ANS	
 
 15.	After describing the JOB_HISTORY table, you discover that the START_DATE 	
 and END_ DATE columns have a data type of DATE. Consider the expression 	END_DATE-START_ DATE. (Choose the correct statement.)
@@ -134,5 +134,5 @@ and END_ DATE columns have a data type of DATE. Consider the expression 	END_DAT
 	C.	A value of type VARCHAR2 is returned. 
 	D.	The expression is invalid since arithmetic cannot be performed on columns 	with DATE data types.
 	E.	The expression represents the days between the END_DATE and START_DATE less 	one day.
-ANS	X
+ANS	
 
