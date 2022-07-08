@@ -56,28 +56,23 @@ REASON	would return incorrect date value error because it doesn't satisfy the sq
 A	REGION_ID
 B	REGION_NAME
 C	REGION_ID and REGION_NAME
-ANS     
-TEST    SELECT * 
-	FROM HR.REGIONS 
-	WHERE 
-		REGION_ID IS NOT NULL OR 
-		REGION_NAME IS NOT NULL OR 
-		(REGION_ID IS NOT NULL AND REGION_NAMEIS NOT NULL);
+ANS     A
+TEST    DESC HR.REGIONS;
 
 11.	How many rows are in the HR.REGIONS table?
 A	None
 B	1
 C	2
 D	4
-ANS     
-TEST	SELECT COUNT(*) FROM HR.REGIONS;
+ANS     None
+TEST	SELECT COUNT(*) FROM HR.REGIONS; --6
 
 12.	How many DISTINCT CUSTOMER_IDs are in the OE.ORDERS table?
 A	None
 B	1
 C	47
 D	106
-ANS     
+ANS     C
 TEST    SELECT COUNT(DISTINCT CUSTOMER_ID) FROM OE.ORDERS;
 
 13.	How would you write a query to SELECT all the columns from the HR.REGIONS table?
@@ -113,10 +108,12 @@ ANS	D
 
 18.	Which is greater 0 or Null? C
 	A 0	B NULL	C Neither
+ANS	C
 
 19.	SELECT SYSDATE FROM DUAL; will run successfully?
 	A Yes	B No
+ANS	A
 
 20.	SELECT 'Some data' FROM DUAL; will run successfully?
 	A Yes	B No
-	
+ANS	A
