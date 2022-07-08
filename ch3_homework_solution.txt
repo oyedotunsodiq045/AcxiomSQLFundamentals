@@ -1,0 +1,213 @@
+Ch 3 Homework 
+
+Where mutiple answers apply please enter your answers as ABC with no spaces or commas.
+
+Please note questions 22,25,26 and 27 have intentionally be omitted to spare you the pain.
+
+1.	Do character based conditions or numeric based conditions need quotation marks?
+	A.	Character
+	B.	Numeric
+	C.	Both
+
+2.	For the question above should you use single or double quotes?
+	A.	Single
+	B.	Double
+
+3.	Do character based conditions or date based conditions need quotation marks?
+	A.	Character
+	B.	date
+	C.	Both
+
+4.	For the question above should you use single or double quotes?
+	A.	Single
+	B.	Double
+
+Use the HR.EMPLOYEES table for question 5 through 25.
+
+5.	How many employees have a HIRE_DATE > '01-JAN-2001'?
+	A.	107	B.	106
+	C.	0	D.	15
+
+6.	How many employees have a SALARY greater than $10,000?
+	A.	107	B.	106
+	C.	0	D.	15
+
+7.  	How many employees have a null SALARY?
+	A.	107	B.	106
+	C.	0	D.	15
+
+8.	How many employees have a FIRST_NAME like 'Pete%'?
+	A.	107	B.	106
+	C.	0	D.	3
+
+9.	How many employees have a FIRST_NAME like '%er'?
+	A.	107	B.	106
+	C.	0	D.	10
+
+10.	How many employees have a FIRST_NAME like '%er%'?
+	A.	107	B.	14
+	C.	0	D.	10
+
+11.	How many employees have a FIRST_NAME like '%er%' and FIRST_NAME like 'Al%'?
+	A.	107	B.	18
+	C.	0	D.	3
+
+12.	How many employees have a FIRST_NAME like '%er%' or FIRST_NAME like 'Al%'?
+	A.	107	B.	14
+	C.	0	D.	18
+
+13.	How many employees have a (FIRST_NAME like '%er%' or FIRST_NAME like 'Al%') and SALARY greater than $10,000? 
+	A.	107	B.	14
+	C.	0	D.	2
+
+14.	How many employees have JOB_ID that is null?
+	A.	107	B.	14
+	C.	0	D.	2
+
+15.	How many employees have JOB_ID that is not null?
+	A.	107	B.	14
+	C.	0	D.	2
+
+16.	How many employees have a FIRST_NAME not like '%er%'?
+	A.	107	B.	93
+	C.	0	D.	2
+
+17.	Which 2 queries would sort the records in the HR.EMPLOYEES table by HIRE_DATE?
+	A.	SELECT COUNT(*) FROM HR.EMPLOYEES ORDER BY HIRE_DATE;
+	B.	SELECT FIRST_NAME FROM HR.EMPLOYEES ORDER BY HIRE_DATE;
+	C.	SELECT FIRST_NAME FROM HR.EMPLOYEES ORDER BY HIRE_DATE DESC;
+	D.	SELECT FIRST_NAME FROM HR.EMPLOYEES ORDER BY FIRST_NAME;
+
+18.  	Which query would sort the records in the HR.EMPLOYEES table by SALARY in descending order?
+	A.	SELECT COUNT(*) FROM HR.EMPLOYEES SORT BY SALARY ASC;
+	B.	SELECT FIRST_NAME FROM HR.EMPLOYEES SORT BY SALARY;
+	C.	SELECT FIRST_NAME FROM HR.EMPLOYEES ORDER BY SALARY DESC;
+	D.	SELECT FIRST_NAME FROM HR.EMPLOYEES ORDER BY SALARY;
+
+19.	Which query selects HIRE_DATE, SALARY and would sort the records in the HR.EMPLOYEES table by SALARY then HIRE_DATE?
+	A.	SELECT HIRE_DATE, SALARY FROM HR.EMPLOYEES;
+	B.	SELECT HIRE_DATE, SALARY ORDER BY SALARY, HIRE_DATE FROM HR.EMPLOYEES;
+	C.	SELECT HIRE_DATE, SALARY ORDER FROM SALARY, HIRE_DATE ORDER BY HR.EMPLOYEES;
+	D.	SELECT HIRE_DATE, SALARY FROM HR.EMPLOYEES ORDER BY SALARY, HIRE_DATE;
+
+20.	Which query selects HIRE_DATE, SALARY and would sort the records in the HR.EMPLOYEES table by SALARY then HIRE_DATE using positional sorting?
+	A.	SELECT HIRE_DATE, SALARY FROM HR.EMPLOYEES ORDER BY SALARY, HIRE_DATE;
+	B.	SELECT HIRE_DATE, SALARY FROM HR.EMPLOYEES ORDER BY 1,2;
+	C.	SELECT HIRE_DATE, SALARY FROM HR.EMPLOYEES ORDER BY 2,1;
+	D.	SELECT HIRE_DATE, SALARY FROM HR.EMPLOYEES ORDER BY DESC 2,1;
+
+21.	Which query selects only HIRE_DATE, SALARY and would sort the records in the HR.EMPLOYEES table by FIRST_NAME?
+	A.	SELECT HIRE_DATE, SALARY FROM HR.EMPLOYEES ORDER BY 1,2;
+	B.	SELECT HIRE_DATE, SALARY FROM HR.EMPLOYEES ORDER BY FIRST_NAME;
+	C.	SELECT HIRE_DATE SALARY FROM HR.EMPLOYEES ORDER BY FIRST_NAME;
+	D.	SELECT HIRE_DATE, SALARY FROM HR.EMPLOYEES ORDER BY FIRST_NAME, LAST_NAME;
+
+
+23. 	Which query selects the owner of the EMPLOYEES table?
+	A.	SELECT OWNER FROM HR.EMPLOYEES;
+	B.	SELECT OWNER FROM HR.ALL_TABLES WHERE OWNER = 'HR';
+	C.	SELECT OWNER FROM ALL_TABLES WHERE TABLE_NAME = 'EMPLOYEES';
+	D.	SELECT ONWER FROM USERS WHERE TABLE_NAME = 'EMPLOYEES';
+
+24.	Which two clauses of the SELECT statement facilitate selection and projection?
+	A.	ORDER BY, HAVING
+	B.	SELECT, WHERE
+	C.	SELECT, FROM
+	D.	SELECT, HAVING
+
+
+
+Use the OE.CUSTOMERS for the questions below.  You will not be able to select * from the table. You can select count(*) or 
+	specific columns.
+
+28.	Which where clause will select only customer records with a GENDER  of 'F'?
+	A.	WHERE GENDER = F
+	B.	WHERE GENDER NOT EQUAL 'M'
+	C.	WHERE GENDER = 'F'
+	D.	WHERE GENDER = 'f'
+
+29.	Which where clause wIll select customer records with a GENDER of 'F' and DATE_OF_BIRTH before '01-JAN-2000'?
+	A.	WHERE GENDER = F AND DATE_OF_BIRTH < January 1, 2000
+	B.	WHERE GENDER = 'F' AND DATE_OF_BIRTH < '01-JAN-2000'
+	C.	WHERE GENDER NOT EQUAL 'M' AND DATE_OF_BIRTH < '01-JAN-2000'
+	D.	WHERE GENDER BETWEEN 'G' AND '01-JAN-2000'
+
+30.	One of the where clauses below has an error in it.  Please choose the one with the error.
+	A.	WHERE CREDIT_LIMIT > 500 AND LOCATION = 'Little Rock' or LOCATION = 'Russellville';
+	B.	WHERE CREDIT_LIMIT > 500 AND (LOCATION = 'Little Rock' or LOCATION = 'Russellville';
+	C.	WHERE CREDIT_LIMIT > 500 AND (LOCATION = 'Little Rock' or LOCATION = 'Russellville');
+	D.	WHERE CREDIT_LIMIT > 500 AND LOCATION IN ('Little Rock', 'Russellville');
+
+31.	Which of the options are true of the NOT operator in the following query?  WHERE LAST_NAME NOT IN ('King','FREEMAN').
+	A.	All rows where last name is neither King nor FREEMAN will be selected
+	B.	All rows where last name is either King or FREEMAN will be selected
+	C.	All rows will be selected
+	D.	No rows will be selected
+
+32.	Which of the options are true of the following query?  WHERE LAST_NAME = 'CRANE' AND LAST_NAME ='FREEMAN'.
+	A.	All rows where last name is neither CRANE nor FREEMAN will be selected
+	B.	All rows where last name is either CRANE or FREEMAN will be selected
+	C.	All rows will be selected
+	D.	No rows will be selected
+
+33.  	How many records from the HR.EMPLOYEES table have MANAGER_ID that is less than 120 OR greater than 200 including null?
+	A.	107	B.	37
+	C.	0	D.	1
+
+34.	Which command will tell you, with the fewest keystorks, how many nulls are in the EMPLOYEE_ID?
+	A.	SELECT COUNT(*) FROM HR.EMPLOYEES;
+	B.	SELECT EMPLOYEE_ID FROM HR.EMPLOYEES;
+	C.	DESC HR.EMPLOYEES
+	D.	SELECT COUNT(*) FROM HR.EMPLOYEES NULL LAST;
+
+35.	How many records in the HR.EMPLOYEES table have a HIRE_DATE between '01-JAN-2001' AND '01-JAN-2013'? 	
+	A.	107	B.	37
+	C.	0	D.	1
+
+36.	How many records in the SH.SALES table have a TIME_ID that is null?
+	A.	107	B.	37
+	C.	0	D.	1
+
+37.   	How many records in the SH.SALES table have a TIME_ID that is not null?
+	A.	918843	B.	37
+	C.	0	D.	1
+
+38.	How many records in the WH_UPDATE.SRC_AUDIT_002801_100284 table have a CONFIDENCECODE = '1' and an SRC_EMAIL_ADDRESS_01 that IS NULL?
+	A.	10015	B.	23
+	C.	0	D.	13
+
+39.	In question 38 I enclosed the value that I was searching for in quotes.  The reason that the value should be enclosed in quotes is...?
+	A. 	The instructor has lost his mind
+	B.	Because it doesn't make a difference
+	C.	Because the column is defined as VARCHAR2 and this eliminates Oracle trying to do implicit conversion.
+
+40	How many records in the WH_UPDATE.SRC_AUDIT_002801_100284 table have a SRC_STATE_PROVINCE_CODE ='H'?
+	A.	None	B.	1
+	C.	3	D.	422
+
+41.	How many records in the WH_UPDATE.SRC_AUDIT_002801_100284 table have a space/blank in the SRC_STATE_PROVINCE_CODE column?
+	A.	None	B.	1
+	C.	3	D.	422
+
+42	How many records in the WH_UPDATE.SRC_AUDIT_002801_100284 table have a SRC_STATE_PROVINCE_CODE LIKE '%H%'?
+	A.	None	B.	1
+	C.	3	D.	422
+
+43.	What are values for the records in the WH_UPDATE.SRC_AUDIT_002801_100284 table that have a SRC_STATE_PROVINCE_CODE LIKE '%H%'?  Hint remember '**'|| FIELD_NAME ||'**'
+	A.	'H', 'HI', 'OH', 'NH'
+	B.	'H ', 'HI', 'OH', 'NH'
+	C.	' H', 'HI', 'OH', 'NH'
+	D.	No records match the criteria.
+
+44.	After working on #40 - #43.  I can see that blanks or spaces in data fields can be a challenge?
+	A.	TRUE
+
+
+
+
+
+
+
+
+
+
