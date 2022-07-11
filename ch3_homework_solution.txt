@@ -8,85 +8,98 @@ Please note questions 22,25,26 and 27 have intentionally be omitted to spare you
 	A.	Character
 	B.	Numeric
 	C.	Both
-ANS	
+ANS	A
 
 2.	For the question above should you use single or double quotes?
 	A.	Single
 	B.	Double
-ANS	
+ANS	A
 
 3.	Do character based conditions or date based conditions need quotation marks?
 	A.	Character
 	B.	date
 	C.	Both
-ANS	
+ANS	C
 
 4.	For the question above should you use single or double quotes?
 	A.	Single
 	B.	Double
-ANS	
+ANS	A
 
 Use the HR.EMPLOYEES table for question 5 through 25.
 
 5.	How many employees have a HIRE_DATE > '01-JAN-2001'?
 	A.	107	B.	106
 	C.	0	D.	15
-ANS	
+ANS	A
+TEST	SELECT COUNT(*) FROM HR.EMPLOYEES WHERE HIRE_DATE > '01-JAN-2001';
 
 6.	How many employees have a SALARY greater than $10,000?
 	A.	107	B.	106
 	C.	0	D.	15
-ANS	
+ANS	D
+TEST	SELECT COUNT(*) FROM HR.EMPLOYEES WHERE SALARY > 10000;
 
 7.  	How many employees have a null SALARY?
 	A.	107	B.	106
 	C.	0	D.	15
-ANS	
+ANS	C
+TEST	SELECT COUNT(*) FROM HR.EMPLOYEES WHERE SALARY IS NULL;
+
 
 8.	How many employees have a FIRST_NAME like 'Pete%'?
 	A.	107	B.	106
 	C.	0	D.	3
-ANS	
+ANS	D
+TEST	SELECT COUNT(*) FROM HR.EMPLOYEES WHERE FIRST_NAME LIKE 'Pete%';
 
 9.	How many employees have a FIRST_NAME like '%er'?
 	A.	107	B.	106
 	C.	0	D.	10
-ANS	
+ANS	D
+TEST	SELECT COUNT(*) FROM HR.EMPLOYEES WHERE FIRST_NAME LIKE '%er';
 
 10.	How many employees have a FIRST_NAME like '%er%'?
 	A.	107	B.	14
 	C.	0	D.	10
-ANS	
+ANS	B
+TEST	SELECT COUNT(*) FROM HR.EMPLOYEES WHERE FIRST_NAME LIKE '%er%';
 
 11.	How many employees have a FIRST_NAME like '%er%' and FIRST_NAME like 'Al%'?
 	A.	107	B.	18
 	C.	0	D.	3
-ANS	
+ANS	D
+TEST	SELECT COUNT(*) FROM HR.EMPLOYEES WHERE FIRST_NAME LIKE '%er%' AND FIRST_NAME LIKE 'Al%';
 
 12.	How many employees have a FIRST_NAME like '%er%' or FIRST_NAME like 'Al%'?
 	A.	107	B.	14
 	C.	0	D.	18
-ANS	
+ANS	D
+TEST	SELECT COUNT(*) FROM HR.EMPLOYEES WHERE FIRST_NAME LIKE '%er%' OR FIRST_NAME LIKE 'Al%';
 
 13.	How many employees have a (FIRST_NAME like '%er%' or FIRST_NAME like 'Al%') and SALARY greater than $10,000? 
 	A.	107	B.	14
 	C.	0	D.	2
-ANS	
+ANS	D
+TEST	SELECT COUNT(*) FROM HR.EMPLOYEES WHERE (FIRST_NAME LIKE '%er%' OR FIRST_NAME LIKE 'Al%') AND SALARY > 10000;
 
 14.	How many employees have JOB_ID that is null?
 	A.	107	B.	14
 	C.	0	D.	2
-ANS	
+ANS	C
+TEST	SELECT COUNT(*) FROM HR.EMPLOYEES WHERE JOB_ID IS NULL;
 
 15.	How many employees have JOB_ID that is not null?
 	A.	107	B.	14
 	C.	0	D.	2
-ANS	
+ANS	A
+TEST	SELECT COUNT(*) FROM HR.EMPLOYEES WHERE JOB_ID IS NOT NULL;
 
 16.	How many employees have a FIRST_NAME not like '%er%'?
 	A.	107	B.	93
 	C.	0	D.	2
-ANS	
+ANS	B
+TEST	SELECT COUNT(*) FROM HR.EMPLOYEES WHERE FIRST_NAME NOT LIKE '%er%';
 
 17.	Which 2 queries would sort the records in the HR.EMPLOYEES table by HIRE_DATE?
 	A.	SELECT COUNT(*) FROM HR.EMPLOYEES ORDER BY HIRE_DATE;
@@ -121,38 +134,41 @@ ANS	C
 	B.	SELECT HIRE_DATE, SALARY FROM HR.EMPLOYEES ORDER BY FIRST_NAME;
 	C.	SELECT HIRE_DATE SALARY FROM HR.EMPLOYEES ORDER BY FIRST_NAME;
 	D.	SELECT HIRE_DATE, SALARY FROM HR.EMPLOYEES ORDER BY FIRST_NAME, LAST_NAME;
-ANS	
+ANS	B
 
 23. 	Which query selects the owner of the EMPLOYEES table?
 	A.	SELECT OWNER FROM HR.EMPLOYEES;
 	B.	SELECT OWNER FROM HR.ALL_TABLES WHERE OWNER = 'HR';
 	C.	SELECT OWNER FROM ALL_TABLES WHERE TABLE_NAME = 'EMPLOYEES';
 	D.	SELECT ONWER FROM USERS WHERE TABLE_NAME = 'EMPLOYEES';
-ANS	
+ANS	C
 
 24.	Which two clauses of the SELECT statement facilitate selection and projection?
 	A.	ORDER BY, HAVING
 	B.	SELECT, WHERE
 	C.	SELECT, FROM
 	D.	SELECT, HAVING
-ANS	
+ANS	B
 
 
-Use the OE.CUSTOMERS for the questions below.  You will not be able to select * from the table. You can select count(*) or 
+Use the OE.CUSTOMERS (SH.CUSTOMERS) for the questions below.  You will not be able to select * from the table. You can select count(*) or 
 	specific columns.
 
-28.	Which where clause will select only customer records with a GENDER  of 'F'?
+28.	Which where clause will select only customer records with a GENDER (CUST_GENDER) of 'F'?
 	A.	WHERE GENDER = F
 	B.	WHERE GENDER NOT EQUAL 'M'
 	C.	WHERE GENDER = 'F'
 	D.	WHERE GENDER = 'f'
+ANS	C
+TEST	SELECT * FROM SH.CUSTOMERS WHERE CUST_GENDER = 'F';
 
-29.	Which where clause wIll select customer records with a GENDER of 'F' and DATE_OF_BIRTH before '01-JAN-2000'?
+29.	Which where clause wIll select customer records with a GENDER of 'F' and DATE_OF_BIRTH (CUST_YEAR_OF_BIRTH) before '01-JAN-2000' ('2000')?
 	A.	WHERE GENDER = F AND DATE_OF_BIRTH < January 1, 2000
 	B.	WHERE GENDER = 'F' AND DATE_OF_BIRTH < '01-JAN-2000'
 	C.	WHERE GENDER NOT EQUAL 'M' AND DATE_OF_BIRTH < '01-JAN-2000'
 	D.	WHERE GENDER BETWEEN 'G' AND '01-JAN-2000'
-ANS	
+ANS	B
+TEST	SELECT * FROM SH.CUSTOMERS WHERE CUST_GENDER = 'F' AND CUST_YEAR_OF_BIRTH < '2000';
 
 30.	One of the where clauses below has an error in it.  Please choose the one with the error.
 	A.	WHERE CREDIT_LIMIT > 500 AND LOCATION = 'Little Rock' or LOCATION = 'Russellville';
