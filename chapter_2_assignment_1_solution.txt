@@ -18,8 +18,8 @@ INTO CLASS_ASSIGNMENTS VALUES (2,1,10,'A')
 INTO CLASS_ASSIGNMENTS VALUES (2,1,11,'A')
 INTO CLASS_ASSIGNMENTS VALUES (2,1,12,'A')
 INTO CLASS_ASSIGNMENTS VALUES (2,1,13,'A')
-INTO CLASS_ASSIGNMENTS VALUES (2,1,14,'X')
-INTO CLASS_ASSIGNMENTS VALUES (2,1,15,'X')
+INTO CLASS_ASSIGNMENTS VALUES (2,1,14,'A')
+INTO CLASS_ASSIGNMENTS VALUES (2,1,15,'B')
 SELECT * FROM DUAL;
 
 
@@ -125,7 +125,11 @@ Key phrase is Which SALARY value(s) will not be permitted.
 	B.	SALARY= 123456.78
 	C.	SALARY= 12345.678
 	D.	SALARY= 123456
-ANS	
+ANS	A
+TEST    DESC HR.EMPLOYEES;
+TEST    UPDATE HR.EMPLOYEES SET SALARY = 12345678 WHERE EMPLOYEE_ID = 206;
+TEST    SELECT SALARY FROM HR.EMPLOYEES WHERE EMPLOYEE_ID = 206;
+REASON	value larger than specified precision allowed for this column
 
 15.	After describing the JOB_HISTORY table, you discover that the START_DATE 	
 and END_ DATE columns have a data type of DATE. Consider the expression 	END_DATE-START_ DATE. (Choose the correct statement.)
@@ -134,5 +138,7 @@ and END_ DATE columns have a data type of DATE. Consider the expression 	END_DAT
 	C.	A value of type VARCHAR2 is returned. 
 	D.	The expression is invalid since arithmetic cannot be performed on columns 	with DATE data types.
 	E.	The expression represents the days between the END_DATE and START_DATE less 	one day.
-ANS	
+ANS	B
+TEST    DESC HR.JOB_HISTORY;
+TEST    SELECT (END_DATE - START_DATE) as DATE_DIFFERENCE FROM HR.JOB_HISTORY;
 
