@@ -1,0 +1,149 @@
+Ch 3 Class Assignment 1
+
+1.  All of the following are valid SQL operators?  A TRUE  B FALSE
+>
+<
+<=
+>=
+<>
+!=
+ANS	A
+
+2.  SELECT FIRST_NAME, LAST_NAME, SALARY, MANAGER_ID FROM HR.EMPLOYEES WHERE NOT (MANAGER_ID IS NULL OR LAST_NAME <> 'King'); 
+
+Is a valid SQL statement?  A TRUE  B FALSE
+ANS	A
+
+3.  How many records in the HR.EMPLOYEES table have a LAST_NAME that starts with 'W'?  
+A	none
+B	1
+C	2
+D	3
+ANS	D
+TEST	SELECT COUNT(*) FROM HR.EMPLOYEES WHERE LAST_NAME LIKE 'W%';
+
+4.  How many records in the HR.EMPLOYEES table have a FIRST_NAME that starts with 'W'?
+A	none
+B	1
+C	2
+D	3
+ANS	D
+TEST	SELECT COUNT(*) FROM HR.EMPLOYEES WHERE FIRST_NAME LIKE 'W%';
+
+5.  How many records in the HR.EMPLOYEES table have a LAST_NAME <> 'King' OR a MANAGER_ID that is null?
+A	none
+B	1
+C	2
+D	106
+ANS	D
+TEST	SELECT COUNT(*) FROM HR.EMPLOYEES WHERE LAST_NAME <> 'King' OR MANAGER_ID IS NULL;
+
+6. How many records in the HR.EMPLOYEES table do NOT have a LAST_NAME <> 'King' AND a MANAGER_ID that is null?
+A	none
+B	1
+C	2
+D	106
+ANS	
+TEST	
+
+7.  How many records in the HR.EMPLOYEES table have a SALARY greater than 1000?
+A	none
+B	1
+C	2
+D	107
+ANS	
+TEST	
+
+8.  How many records in the HR.EMPLOYEES table have a SALARY BETWEEN 1000 AND 2100?
+A	none
+B	1
+C	2
+D	107
+ANS	
+TEST	
+
+9.  How many records in the HR.EMPLOYEES table have a HIRE_DATE BETWEEN January and June of 2006?
+A	none
+B	1
+C	16
+D	107
+ANS	
+TEST	
+
+10.  How many records in the HR.EMPLOYEES table have a HIRE_DATE BETWEEN January and June of 2001?
+A	none
+B	1
+C	16
+D	107
+ANS	
+TEST	
+
+
+
+11.  How many records in the WAREHOUSE.AUTHORIZATION table have a value of 'N' and how many have a value of 'n' for the AUTH_FLG column?
+	A. N=453556 and n=60066
+	B. N=453556 and n=12541
+	C. N=12541 and n=453556
+	D. There are no records with these values
+ANS	
+TEST	
+
+12.  How many records have either a value of 'P' or 'A' for ASSOC_TYP_CD on the WAREHOUSE.AUTHORIZATION table?
+	A. No records selected
+	B. 417059
+	C. 147059
+	D. 121724
+ANS	
+TEST	
+
+13.  How many records do not have either a value of 'P' or 'A' for ASSOC_TYP_CD on the WAREHOUSE.AUTHORIZATION table?
+	A. No records selected
+	B. 417059
+	C. 538704
+	D. 121645
+ANS	
+TEST	
+
+14.  How many records have a value of 'P' for ASSOC_TYP_CD on the WAREHOUSE.AUTHORIZATION table and have a value of 'n' for the AUTH_FLG column?
+	A. No records selected
+	B. 417059
+	C. 538704
+	D. 3
+ANS	
+TEST	
+
+15. How many records in the WAREHOUSE.AUTHORIZATION table have a value of 'N' OR a value of 'n' for the AUTH_FLG column OR a value of 'P' OR 'A' for ASSOC_TYP_CD column?
+	A. No records selected
+	B. 526166
+	C. 466097
+	D. 344376
+ANS	
+TEST	
+
+16. How many records in the WAREHOUSE.AUTHORIZATION table have a value of 'N' OR a value of 'n' for the AUTH_FLG column AND a value of 'P' OR 'A' for ASSOC_TYP_CD column?
+	A. No records selected
+	B. 526166
+	C. 356990
+	D. 344376
+ANS	
+TEST	
+
+17. How many records in the WAREHOUSE.AUTHORIZATION table have a value of 'N' OR a value of 'n' for the AUTH_FLG column 
+AND a value of 'P' OR 'A' for ASSOC_TYP_CD column 
+AND EFF_DT has no value?  Hint:  correct use of parantheses is a must
+	A. No records selected
+	B. 466097
+	C. 526166
+	D. 55283
+ANS	
+TEST	
+
+18. How many records in the WAREHOUSE.AUTHORIZATION table have a value of 'N' OR a value of 'n' for the AUTH_FLG column 
+AND a value of 'P' OR 'A' for ASSOC_TYP_CD column 
+AND MAINT_DT is not null?  Hint:  correct use of parantheses is a must
+	A. No records selected
+	B. 466097
+	C. 526166
+	D. 356990
+ANS	
+TEST	
