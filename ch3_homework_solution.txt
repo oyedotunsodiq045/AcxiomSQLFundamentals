@@ -175,21 +175,22 @@ TEST	SELECT * FROM SH.CUSTOMERS WHERE CUST_GENDER = 'F' AND CUST_YEAR_OF_BIRTH <
 	B.	WHERE CREDIT_LIMIT > 500 AND (LOCATION = 'Little Rock' or LOCATION = 'Russellville';
 	C.	WHERE CREDIT_LIMIT > 500 AND (LOCATION = 'Little Rock' or LOCATION = 'Russellville');
 	D.	WHERE CREDIT_LIMIT > 500 AND LOCATION IN ('Little Rock', 'Russellville');
-ANS	
+ANS	B 
+REASON	missing closing bracket after 'Russellville'
 
 31.	Which of the options are true of the NOT operator in the following query?  WHERE LAST_NAME NOT IN ('King','FREEMAN').
 	A.	All rows where last name is neither King nor FREEMAN will be selected
 	B.	All rows where last name is either King or FREEMAN will be selected
 	C.	All rows will be selected
 	D.	No rows will be selected
-ANS	
+ANS	A
 
 32.	Which of the options are true of the following query?  WHERE LAST_NAME = 'CRANE' AND LAST_NAME ='FREEMAN'.
 	A.	All rows where last name is neither CRANE nor FREEMAN will be selected
 	B.	All rows where last name is either CRANE or FREEMAN will be selected
 	C.	All rows will be selected
 	D.	No rows will be selected
-ANS	
+ANS	D
 
 33.  	How many records from the HR.EMPLOYEES table have MANAGER_ID that is less than 120 OR greater than 200 including null?
 	A.	107	B.	37
@@ -201,47 +202,56 @@ ANS
 	B.	SELECT EMPLOYEE_ID FROM HR.EMPLOYEES;
 	C.	DESC HR.EMPLOYEES
 	D.	SELECT COUNT(*) FROM HR.EMPLOYEES NULL LAST;
-ANS	
+ANS	C
+TEST	SELECT COUNT(*) FROM HR.EMPLOYEES WHERE EMPLOYEE_ID IS NULL;
 
 35.	How many records in the HR.EMPLOYEES table have a HIRE_DATE between '01-JAN-2001' AND '01-JAN-2013'? 	
 	A.	107	B.	37
 	C.	0	D.	1
-ANS	
+ANS	A
+TEST	SELECT * FROM HR.EMPLOYEES WHERE HIRE_DATE BETWEEN '01-JAN-2001' AND '01-JAN-2013';
 
 36.	How many records in the SH.SALES table have a TIME_ID that is null?
 	A.	107	B.	37
 	C.	0	D.	1
-ANS	
+ANS	C
+TEST	SELECT COUNT(*) FROM SH.SALES WHERE TIME_ID IS NULL;
 
 37.   	How many records in the SH.SALES table have a TIME_ID that is not null?
 	A.	918843	B.	37
 	C.	0	D.	1
-ANS	
+ANS	A
+TEST	SELECT COUNT(*) FROM SH.SALES WHERE TIME_ID IS NOT NULL;
 
 38.	How many records in the WH_UPDATE.SRC_AUDIT_002801_100284 table have a CONFIDENCECODE = '1' and an SRC_EMAIL_ADDRESS_01 that IS NULL?
 	A.	10015	B.	23
 	C.	0	D.	13
+ANS	
+TEST	SELECT * FROM WH_UPDATE.SRC_AUDIT_002801_100284 WHERE CONFIDENCECODE = '1' AND SRC_EMAIL_ADDRESS_01 IS NULL;
 
 39.	In question 38 I enclosed the value that I was searching for in quotes.  The reason that the value should be enclosed in quotes is...?
 	A. 	The instructor has lost his mind
 	B.	Because it doesn't make a difference
 	C.	Because the column is defined as VARCHAR2 and this eliminates Oracle trying to do implicit conversion.
-ANS	
+ANS	C
 
 40	How many records in the WH_UPDATE.SRC_AUDIT_002801_100284 table have a SRC_STATE_PROVINCE_CODE ='H'?
 	A.	None	B.	1
 	C.	3	D.	422
 ANS	
+TEST	SELECT * FROM WH_UPDATE.SRC_AUDIT_002801_100284 WHERE SRC_STATE_PROVINCE_CODE = 'H';
 
 41.	How many records in the WH_UPDATE.SRC_AUDIT_002801_100284 table have a space/blank in the SRC_STATE_PROVINCE_CODE column?
 	A.	None	B.	1
 	C.	3	D.	422
 ANS	
+TEST	SELECT * FROM WH_UPDATE.SRC_AUDIT_002801_100284 WHERE SRC_STATE_PROVINCE_CODE = ' ' OR SRC_STATE_PROVINCE_CODE IS NULL;
 
 42	How many records in the WH_UPDATE.SRC_AUDIT_002801_100284 table have a SRC_STATE_PROVINCE_CODE LIKE '%H%'?
 	A.	None	B.	1
 	C.	3	D.	422
 ANS	
+TEST	SELECT * FROM WH_UPDATE.SRC_AUDIT_002801_100284 WHERE SRC_STATE_PROVINCE_CODE LIKE '%H%';
 
 43.	What are values for the records in the WH_UPDATE.SRC_AUDIT_002801_100284 table that have a SRC_STATE_PROVINCE_CODE LIKE '%H%'?  Hint remember '**'|| FIELD_NAME ||'**'
 	A.	'H', 'HI', 'OH', 'NH'
