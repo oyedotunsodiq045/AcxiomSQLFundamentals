@@ -109,6 +109,7 @@ ANS	D
 18.	Which is greater 0 or Null? C
 	A 0	B NULL	C Neither
 ANS	C
+REASON	You cannot compare Null to anything
 
 19.	SELECT SYSDATE FROM DUAL; will run successfully?
 	A Yes	B No
