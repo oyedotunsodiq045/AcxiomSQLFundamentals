@@ -94,6 +94,7 @@ A	NULL
 B	555-1212
 C	PHONE_LIST_TYP('+49 89 012 4129', '+49 89 083 4839')
 ANS	
+NOTE	Table no longer exist, hence answer not verified
 TEST    SELECT PHONE_NUMBER FROM OE.CUSTOMERS WHERE CUSTOMER_ID = 326;
 
 16.	How would you write a SELECT statement to concatenate CUST_FIRST_NAME, **, and CUST_LAST_NAME from the OE.CUSTOMERS table?
