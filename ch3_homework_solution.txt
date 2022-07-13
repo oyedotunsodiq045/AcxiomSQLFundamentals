@@ -46,7 +46,6 @@ TEST	SELECT COUNT(*) FROM HR.EMPLOYEES WHERE SALARY > 10000;
 ANS	C
 TEST	SELECT COUNT(*) FROM HR.EMPLOYEES WHERE SALARY IS NULL;
 
-
 8.	How many employees have a FIRST_NAME like 'Pete%'?
 	A.	107	B.	106
 	C.	0	D.	3
@@ -150,7 +149,6 @@ ANS	C
 	D.	SELECT, HAVING
 ANS	B
 
-
 Use the OE.CUSTOMERS (SH.CUSTOMERS) for the questions below.  You will not be able to select * from the table. You can select count(*) or 
 	specific columns.
 
@@ -195,7 +193,8 @@ ANS	D
 33.  	How many records from the HR.EMPLOYEES table have MANAGER_ID that is less than 120 OR greater than 200 including null?
 	A.	107	B.	37
 	C.	0	D.	1
-ANS	
+ANS	36
+TEST	SELECT COUNT(MANAGER_ID) FROM HR.EMPLOYEES WHERE MANAGER_ID < 120 OR MANAGER_ID > 200 OR MANAGER_ID IS NULL;
 
 34.	Which command will tell you, with the fewest keystorks, how many nulls are in the EMPLOYEE_ID?
 	A.	SELECT COUNT(*) FROM HR.EMPLOYEES;
@@ -227,6 +226,7 @@ TEST	SELECT COUNT(*) FROM SH.SALES WHERE TIME_ID IS NOT NULL;
 	A.	10015	B.	23
 	C.	0	D.	13
 ANS	
+NOTE	Table no longer exist, hence answer not verified
 TEST	SELECT * FROM WH_UPDATE.SRC_AUDIT_002801_100284 WHERE CONFIDENCECODE = '1' AND SRC_EMAIL_ADDRESS_01 IS NULL;
 
 39.	In question 38 I enclosed the value that I was searching for in quotes.  The reason that the value should be enclosed in quotes is...?
@@ -239,18 +239,21 @@ ANS	C
 	A.	None	B.	1
 	C.	3	D.	422
 ANS	
+NOTE	Table no longer exist, hence answer not verified
 TEST	SELECT * FROM WH_UPDATE.SRC_AUDIT_002801_100284 WHERE SRC_STATE_PROVINCE_CODE = 'H';
 
 41.	How many records in the WH_UPDATE.SRC_AUDIT_002801_100284 table have a space/blank in the SRC_STATE_PROVINCE_CODE column?
 	A.	None	B.	1
 	C.	3	D.	422
 ANS	
+NOTE	Table no longer exist, hence answer not verified
 TEST	SELECT * FROM WH_UPDATE.SRC_AUDIT_002801_100284 WHERE SRC_STATE_PROVINCE_CODE = ' ' OR SRC_STATE_PROVINCE_CODE IS NULL;
 
 42	How many records in the WH_UPDATE.SRC_AUDIT_002801_100284 table have a SRC_STATE_PROVINCE_CODE LIKE '%H%'?
 	A.	None	B.	1
 	C.	3	D.	422
 ANS	
+NOTE	Table no longer exist, hence answer not verified
 TEST	SELECT * FROM WH_UPDATE.SRC_AUDIT_002801_100284 WHERE SRC_STATE_PROVINCE_CODE LIKE '%H%';
 
 43.	What are values for the records in the WH_UPDATE.SRC_AUDIT_002801_100284 table that have a SRC_STATE_PROVINCE_CODE LIKE '%H%'?  Hint remember '**'|| FIELD_NAME ||'**'
@@ -259,10 +262,12 @@ TEST	SELECT * FROM WH_UPDATE.SRC_AUDIT_002801_100284 WHERE SRC_STATE_PROVINCE_CO
 	C.	' H', 'HI', 'OH', 'NH'
 	D.	No records match the criteria.
 ANS	
+NOTE	Table no longer exist, hence answer not verified
 
 44.	After working on #40 - #43.  I can see that blanks or spaces in data fields can be a challenge?
 	A.	TRUE
-
+ANS	
+NOTE	Table no longer exist, hence answer not verified
 
 
 
