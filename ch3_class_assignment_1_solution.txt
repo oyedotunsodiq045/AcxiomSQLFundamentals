@@ -78,14 +78,13 @@ D	107
 ANS	B
 TEST	SELECT COUNT(*) FROM HR.EMPLOYEES WHERE HIRE_DATE BETWEEN '01-JAN-01' AND '30-JUN-01';
 
-
-
 11.  How many records in the WAREHOUSE.AUTHORIZATION table have a value of 'N' and how many have a value of 'n' for the AUTH_FLG column?
 	A. N=453556 and n=60066
 	B. N=453556 and n=12541
 	C. N=12541 and n=453556
 	D. There are no records with these values
 ANS	
+NOTE	Table no longer exist, hence answer not verified
 TEST	SELECT COUNT(AUTH_FLG) FROM WAREHOUSE.AUTHORIZATION WHERE AUTH_FLG = 'N';
 TEST	SELECT COUNT(AUTH_FLG) FROM WAREHOUSE.AUTHORIZATION WHERE AUTH_FLG = 'n';
 TEST	SELECT 
@@ -99,6 +98,7 @@ TEST	SELECT
 	C. 147059
 	D. 121724
 ANS	
+NOTE	Table no longer exist, hence answer not verified
 TEST	SELECT COUNT(ASSOC_TYP_CD) FROM WAREHOUSE.AUTHORIZATION WHERE ASSOC_TYP_CD = 'P' OR ASSOC_TYP_CD = 'A';
 
 13.  How many records do not have either a value of 'P' or 'A' for ASSOC_TYP_CD on the WAREHOUSE.AUTHORIZATION table?
@@ -107,7 +107,8 @@ TEST	SELECT COUNT(ASSOC_TYP_CD) FROM WAREHOUSE.AUTHORIZATION WHERE ASSOC_TYP_CD 
 	C. 538704
 	D. 121645
 ANS	
-TEST	
+NOTE	Table no longer exist, hence answer not verified
+TEST	SELECT COUNT(ASSOC_TYP_CD) FROM WAREHOUSE.AUTHORIZATION WHERE ASSOC_TYP_CD <> 'P' OR ASSOC_TYP_CD <> 'A';
 
 14.  How many records have a value of 'P' for ASSOC_TYP_CD on the WAREHOUSE.AUTHORIZATION table and have a value of 'n' for the AUTH_FLG column?
 	A. No records selected
@@ -115,7 +116,10 @@ TEST
 	C. 538704
 	D. 3
 ANS	
-TEST	
+NOTE	Table no longer exist, hence answer not verified
+TEST	SELECT 
+	COUNT(CASE WHEN ASSOC_TYP_CD = 'P' AND AUTH_FLG = 'n' THEN 1 END) AS TotalRecords
+	FROM WAREHOUSE.AUTHORIZATION;
 
 15. How many records in the WAREHOUSE.AUTHORIZATION table have a value of 'N' OR a value of 'n' for the AUTH_FLG column OR a value of 'P' OR 'A' for ASSOC_TYP_CD column?
 	A. No records selected
@@ -123,7 +127,10 @@ TEST
 	C. 466097
 	D. 344376
 ANS	
-TEST	
+NOTE	Table no longer exist, hence answer not verified
+TEST	SELECT 
+	COUNT(CASE WHEN AUTH_FLG = 'N' OR AUTH_FLG = 'n' OR ASSOC_TYP_CD <> 'P' OR ASSOC_TYP_CD <> 'A' THEN 1 END) AS TotalRecords
+	FROM WAREHOUSE.AUTHORIZATION;
 
 16. How many records in the WAREHOUSE.AUTHORIZATION table have a value of 'N' OR a value of 'n' for the AUTH_FLG column AND a value of 'P' OR 'A' for ASSOC_TYP_CD column?
 	A. No records selected
@@ -131,7 +138,10 @@ TEST
 	C. 356990
 	D. 344376
 ANS	
-TEST	
+NOTE	Table no longer exist, hence answer not verified
+TEST	SELECT 
+	COUNT(CASE WHEN AUTH_FLG = 'N' OR AUTH_FLG = 'n' AND ASSOC_TYP_CD <> 'P' OR ASSOC_TYP_CD <> 'A' THEN 1 END) AS TotalRecords
+	FROM WAREHOUSE.AUTHORIZATION;
 
 17. How many records in the WAREHOUSE.AUTHORIZATION table have a value of 'N' OR a value of 'n' for the AUTH_FLG column 
 AND a value of 'P' OR 'A' for ASSOC_TYP_CD column 
@@ -141,7 +151,10 @@ AND EFF_DT has no value?  Hint:  correct use of parantheses is a must
 	C. 526166
 	D. 55283
 ANS	
-TEST	
+NOTE	Table no longer exist, hence answer not verified
+TEST	SELECT 
+	COUNT(CASE WHEN (AUTH_FLG = 'N' OR AUTH_FLG = 'n') AND (ASSOC_TYP_CD <> 'P' OR ASSOC_TYP_CD <> 'A') AND (EFF_DT IS NULL OR EFF_DT = ' ') THEN 1 END) AS TotalRecords
+	FROM WAREHOUSE.AUTHORIZATION;
 
 18. How many records in the WAREHOUSE.AUTHORIZATION table have a value of 'N' OR a value of 'n' for the AUTH_FLG column 
 AND a value of 'P' OR 'A' for ASSOC_TYP_CD column 
@@ -151,4 +164,7 @@ AND MAINT_DT is not null?  Hint:  correct use of parantheses is a must
 	C. 526166
 	D. 356990
 ANS	
-TEST	
+NOTE	Table no longer exist, hence answer not verified
+TEST	SELECT 
+	COUNT(CASE WHEN (AUTH_FLG = 'N' OR AUTH_FLG = 'n') AND (ASSOC_TYP_CD <> 'P' OR ASSOC_TYP_CD <> 'A') AND MAINT_DT IS NOT NULL OR EFF_DT <> ' ') THEN 1 END) AS TotalRecords
+	FROM WAREHOUSE.AUTHORIZATION;
