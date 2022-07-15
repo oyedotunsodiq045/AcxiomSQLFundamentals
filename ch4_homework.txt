@@ -41,8 +41,6 @@ REASON
 	D.	SUBSTR, UPPER, LAST_DAY
 ANS	
 TEST	
-NOTE	
-REASON	
 
 6.	How many records have a FIRST_NAME with a length greater than 6 WHERE the FIRST_NAME is like '%er%'?
 	A.	107	B.	106
@@ -55,16 +53,12 @@ TEST	SELECT COUNT(FIRST_NAME) FROM HR.EMPLOYEES WHERE LENGTH(FIRST_NAME) > 6 AND
 	C.	4	D.	12
 ANS	
 TEST	
-NOTE	
-REASON	
 
 8.	How many records have a FIRST_NAME that contains the lowercase 'z'?
 	A.	107	B.	3
 	C.	14	D.	0
 ANS	
 TEST	
-NOTE	
-REASON	
 
 9.	How many records have a SALARY > ROUND(12345,-5)?
 	A.	107	B.	3
