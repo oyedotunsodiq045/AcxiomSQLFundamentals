@@ -57,106 +57,149 @@ TEST	SELECT COUNT(FIRST_NAME) FROM HR.EMPLOYEES WHERE LENGTH(FIRST_NAME) > 6 AND
 8.	How many records have a FIRST_NAME that contains the lowercase 'z'?
 	A.	107	B.	3
 	C.	14	D.	0
-ANS	
-TEST	
+ANS	B
+TEST	SELECT COUNT(FIRST_NAME) FROM HR.EMPLOYEES WHERE FIRST_NAME LIKE '%z%';
 
 9.	How many records have a SALARY > ROUND(12345,-5)?
 	A.	107	B.	3
 	C.	14	D.	0
+ANS	A
+TEST	SELECT COUNT(*) FROM HR.EMPLOYEES WHERE SALARY > ROUND(12345, -5);
 
 10.	How many records have a SALARY > ROUND(12345,-4)?
 	A.	107	B.	3
 	C.	15	D.	0
+ANS	C
+TEST	SELECT COUNT(*) FROM HR.EMPLOYEES WHERE SALARY > ROUND(12345, -4);
 
 11.  	What is the value of ROUND(12345,-5)?
 	A.	0	B.	10000
+ANS	A
+TEST	SELECT ROUND(12345, -5) FROM DUAL;
 
 12.	What value is returned after executing the following statement?  SELECT MOD(14,3) FROM DUAL;  Select the best answer.
 	A.	3
 	B.	2
 	C.	42
 	D.	None of the above
+ANS	B
 
 13.	Assuming SYSDATE=07-FEB-2012 12:12pm, what is returned after executing the following statement?  SELECT ADD_MONTHS(SYSDATE,-1) FROM DUAL;  (Choose the best answer)
 	A.	07-MAR-2012 12:12pm
 	B.	07-JAN-2012 12:12pm
 	C.	07-FEB-2011 12:12pm
 	D.	None of the above
+ANS	B
 
 14.	What value is returned after executing the following statement?  SELECT CONCAT('SQL is ','easy to learn.') FROM DUAL;
 	A.	SQL is easy to learn.
 	B.	An error is returned
 	C.	No output is generated
 	D.	None of the above
+ANS	A
 
 15.	Which of the following is the best describes the output for the SOUNDEX function?
 	A.	SOUNDEX Converts characters to numbers
 	B.	SOUNDEX returns a character string containing the phonetic representation of char.
 	C.	SOUNDEX allows you to compare character strings.
 	D.	SOUNDEX is when your ex-wife is making noise.
+ANS	B
 
 16.	Assuming SYSDATE=07-FEB-2012 12:12pm, what is returned after executing the following statement?  SELECT TO_DATE(LAST_DAY(ADD_MONTHS(TRUNC(SYSDATE), -1))) FROM DUAL;  (Choose the best answer)
 	A.	01-JAN-2012
 	B.	31-JAN-2012
 	C.	29-FEB-2012
 	D.	31-JAN-2011
+ANS	B
 
 17.	Assuming there is one record in the HR.EMPLOYEES  table and FIRST_NAME =  'Barry' and LAST_NAME = 'CRANE', what is returned after executing the following statement?  SELECT INITCAP(UPPER(FIRST_NAME) || LAST_NAME)  FROM HR.EMPLOYEES;  (Choose the best answer)
 	A.	BARRYCRANE
 	B.	BarryCRANE
 	C.	Barrycrane
 	D.	Barry Crane
+ANS	
+TEST	
 
 18.	What are the two methods to concatenate fields?
 	A.	CONCAT() , ||
 	B.	CAT	, ||
+ANS	
+TEST	
 	
 19.	How many of the records in the HR.EMPLOYEES table have a SALARY < ROUND(SALARY,-1)?
 	A.	1	B.	0
 	C.	2	D.	107
+ANS	
+TEST	
 
 20.  	What function would you use to find the position of the 3 occurance of 'e' in the FIRST_NAME?
 	A.	CONCAT
 	B.	LOWER
 	C.	INSTR
 	D.	NEXT
+ANS	
+TEST	
 
 21.	How many of the records in the HR.EMPLOYEES table have a SALARY < ROUND(SALARY,11)?
 	A.	1	B.	0
 	C.	2	D.	107
+ANS	
+TEST	
 
 22.  	SELECT NEXT_DAY(HIRE_DATE,'WED') FROM HR.EMPLOYEES; is a valid query?
 	A.	True	B.	False
+ANS	
+TEST	
 
 23.  	SELECT NEXT_DAY(HIRE_DATE,'w') FROM HR.EMPLOYEES; is a valid query?
 	A.	True	B.	False
+ANS	
+TEST	
 
 24.  	SELECT LAST_DAY(HIRE_DATE,'w') FROM HR.EMPLOYEES; is a valid query?
 	A.	True	B.	False
+ANS	
+TEST	
 
 25.  	SELECT ADD_MONTHS(HIRE_DATE,'wed') FROM HR.EMPLOYEES; is a valid query?
 	A.	True	B.	False
 
+ANS	
+TEST	
 26.  	SELECT NEXT_DAY(HIRE_DATE,'wed') FROM HR.EMPLOYEES; is a valid query?
 	A.	True	B.	False
+ANS	
+TEST	
 
 27.  	SELECT ADD_MONTHS('01-JAN-2013',1) FROM HR.EMPLOYEES; is a valid query?
 	A.	True	B.	False
+ANS	
+TEST	
 
 28.  	SELECT ADD_MONTHS(HIRE_DATE,1) FROM HR.EMPLOYEES; is a valid query?
 	A.	True	B.	False
+ANS	
+TEST	
 
 29.  	SELECT LAST_DAY(HIRE_DATE) FROM HR.EMPLOYEES; is a valid query?
 	A.	True	B.	False
+ANS	
+TEST	
 
 30.  	SELECT ROUND(SALARY) FROM HR.EMPLOYEES; is a valid query?
 	A.	True	B.	False
+ANS	
+TEST	
 
 31.	SELECT ROUND(SALARY,0) FROM HR.EMPLOYEES; is a valid query?
 	A.	True	B.	False
+ANS	
+TEST	
 
 32.	SELECT ROUND(SALARY,-3) FROM HR.EMPLOYEES; is a valid query?
 	A.	True	B.	False
+ANS	
+TEST	
 
 33.	What is the result for almost every record of the return set?
 	SELECT LENGTH(SUBSTR(FIRST_NAME,2,3)) FROM HR.EMPLOYEES;
@@ -164,6 +207,8 @@ TEST
 	B.	6
 	C.	3
 	D.	None of the Above
+ANS	
+TEST	
 
 34.	What is the result for every record of the return set?
 	SELECT SUBSTR(LENGTH(FIRST_NAME),3,2) FROM HR.EMPLOYEES;
@@ -171,6 +216,8 @@ TEST
 	B.	6
 	C.	3
 	D.	None of the Above
+ANS	
+TEST	
 
 35.	What is the result for every record of the return set?
 	SELECT SUBSTR(LENGTH(FIRST_NAME),1,2) FROM HR.EMPLOYEES;
@@ -178,6 +225,8 @@ TEST
 	B.	6
 	C.	3
 	D.	None of the Above
+ANS	
+TEST	
 
 36.	What is the reault of
 	SELECT LENGTH(CONCAT(FIRST_NAME, LAST_NAME)) FROM HR.EMPLOYEES WHERE SALARY > 100000;
@@ -185,36 +234,48 @@ TEST
 	B.	6
 	C.	3
 	D.	None of the Above
+ANS	
+TEST	
 
 37.	What value is returned after executing the following statement?  SELECT INSTR('How_long_is_it_until_Christmas','_',5,2) FROM DUAL;
 	A.	0
 	B.	12
 	C.	9
 	D.	None of the above
+ANS	
+TEST	
 
 38.	What value is returned after executing the following statement?  SELECT INSTR('How_long_is_it_until_Christmas','_',5,5) FROM DUAL;
 	A.	0
 	B.	12
 	C.	9
 	D.	None of the above
+ANS	
+TEST	
 
 39.	What value is returned after executing the following statement?  SELECT INSTR(REPLACE('How_long_is_it_until_Christmas','_','***'),'_',5,5) FROM DUAL;
 	A.	0
 	B.	12
 	C.	9
 	D.	None of the above
+ANS	
+TEST	
 
 40.	What value is returned after executing the following statement?  SELECT INSTR(REPLACE('How_long_is_it_until_Christmas','_','***'),'*',5,5) FROM DUAL;
 	A.	0
 	B.	12
 	C.	9
 	D.	None of the above
+ANS	
+TEST	
 
 41.	What value is returned after executing the following statement?  SELECT INSTR(REPLACE('How_long_is_it_until_Christmas','_','***'),'*',5,1) FROM DUAL;
 	A.	0
 	B.	12
 	C.	9
 	D.	None of the above
+ANS	
+TEST	
 
 
 
