@@ -1,0 +1,70 @@
+Chapter 4 Class Assignment 1
+
+1. If you were going to split SQL functions into two major categories what would they be?
+	A.	Good and Bad
+	B.	Easy and Hard
+	C.	Single Row and Multi-row
+	D.	Date and Numberic
+ANS	C
+
+2. What groups can you put single row functions into?
+	A.	Good and Bad
+	B.	Easy and Hard
+	C.	Character, Numeric, Date
+	D.	Character conversion and Alpha Numeric Conversion
+ANS	C
+
+3.  Which of the following are Character conversion functions?
+	A.	LAST_DAY
+	B.	UPPER and LOWER
+	C.	INITCAP and MONTHS_BETWEEN
+	D.	UPPER and LOWEST
+ANS	B
+
+4.  Which query will find the last day of the previous month?
+	A.	SELECT SYSDATE FROM DUAL;
+	B. 	SELECT LAST_DAY(SYSDATE) FROM DUAL;
+	C.	SELECT LAST_DAY(ADD_MONTHS(TRUNC(SYSDATE)),-1) FROM DUAL;
+	D.	SELECT LAST_DAY(ADD_MONTHS(TRUNC(SYSDATE),-1)) FROM DUAL;
+ANS	D
+
+5.  Which query will round to the nearest interger?
+	A.	SELECT ROUND(12345.987) FROM DUAL;
+	B.	SELECT ROUND(12345.987,-1) FROM DUAL;
+ANS	A
+
+6.  Which query will round to the nearest hundreth?
+	A.	SELECT ROUND(12345.987),2 FROM DUAL;
+	B.	SELECT ROUND(12345.987,-1) FROM DUAL;
+	C.	SELECT ROUND(12345.987,-2) FROM DUAL;
+	D.	SELECT ROUND(12345.987,2) FROM DUAL;
+ANS	C
+
+7.  Which query will give you the nearest Sunday?
+	A.  SELECT TRUNC(SYSDATE) FROM DUAL;
+	B.  SELECT TRUNC(SYSDATE, 'W') FROM DUAL;
+	C.  SELECT NEXT_DAY(SYSDATE, 'W') FROM DUAL;
+	D.  SELECT ROUND(SYSDATE, 'week') FROM DUAL;
+ANS	A
+
+8.  What value does the following substring function use for the starting position?
+	SELECT SUBSTR(LAST_NAME,1,4) FROM HR.EMPLOYEES;
+	A.	1
+	B.	2
+	C.	No value is specified
+	D.	4
+ANS	A
+
+9. Which instring query below will find the second 'a' in the LAST_NAME?
+	A.	SELECT LAST_NAME, INSTR(FIRST_NAME,'a',2) FROM HR.EMPLOYEES;
+	B.	SELECT LAST_NAME, INSTR(LAST_NAME,'a',2) FROM HR.EMPLOYEES;
+	C.	SELECT LAST_NAME, INSTR(LAST_NAME,'a',1,2) FROM HR.EMPLOYEES;
+	D.	SELECT LAST_NAME, INSTR(FIRST_NAME,'a',1,2) FROM HR.EMPLOYEES;
+ANS	C
+
+10. Which query below will replace blanks with an underscore?
+	A.	SELECT REPLACE(JOB_TITLE,' ','_') FROM HR.JOBS;
+	B.	SELECT REPLACE(JOB_TITLE,' ') FROM HR.JOBS;
+	C.	SELECT SUBSTITUTE(JOB_TITLE,' ','_') FROM HR.JOBS;
+	D.	SELECT SUBSTITUTE(JOB_TITLE,' ') FROM HR.JOBS;
+ANS	A
